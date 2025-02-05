@@ -35,6 +35,15 @@ while n < len(pi_arr):
     # print("relative error:" + str(diff))
     rel_err.append(diff)
     n+=1
-    print("==========")
-plt.plot(abs_err)
+    # print("==========")
+print(abs_err)
+print(rel_err)
+
+fig, ax = plt.subplots(layout='constrained' )
+ax.set_xlabel('pi')
+ax.set_ylabel('error')
+ax.plot(pi_arr, abs_err, label='absolute', marker='.', linestyle='')
+ax.plot(pi_arr, rel_err, label='relative', marker='.', linestyle='')
+ax.set_title("unavoidable error")
+ax.legend()
 plt.show()
